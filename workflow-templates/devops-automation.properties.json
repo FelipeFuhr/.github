@@ -1,0 +1,6 @@
+{
+  "name": "DevOps / Automation",
+  "description": "Fleet-standard automation: stale issues, OpenSSF Scorecard, release-please versioning. Enable individual jobs via repository variables.",
+  "iconName": "octicon:tools",
+  "categories": ["Automation", "DevOps"]
+}
