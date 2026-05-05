@@ -1,0 +1,6 @@
+{
+  "name": "DevOps / Security",
+  "description": "Fleet-standard security scanning: gitleaks secret scan, Trivy filesystem scan, Grype vulnerability scan, OSV scanner.",
+  "iconName": "octicon:shield",
+  "categories": ["Security", "DevOps"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "DevOps / PR Hygiene",
+  "description": "Enforce Conventional Commit PR titles and lint workflow YAML on every pull request.",
+  "iconName": "octicon:git-pull-request",
+  "categories": ["Code Quality", "DevOps"]
+}
