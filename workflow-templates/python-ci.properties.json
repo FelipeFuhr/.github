@@ -1,0 +1,6 @@
+{
+  "name": "Python CI",
+  "description": "fmt (ruff), lint (ruff), and test (pytest) via ffreis-workflows-python. Renovate will pin the @main refs to SHA.",
+  "iconName": "octicon:check-circle",
+  "categories": ["Python", "CI"]
+}

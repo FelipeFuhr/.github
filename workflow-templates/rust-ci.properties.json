@@ -1,0 +1,6 @@
+{
+  "name": "Rust CI",
+  "description": "fmt, clippy, and test via ffreis-workflows-rust. Renovate will pin the @main refs to SHA.",
+  "iconName": "octicon:check-circle",
+  "categories": ["Rust", "CI"]
+}

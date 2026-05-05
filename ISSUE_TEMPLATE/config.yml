@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the repo AGENTS.md first
+    url: https://github.com/FelipeFuhr
+    about: Most questions are answered in the repo's AGENTS.md — check it before opening an issue.
+  - name: Report a security vulnerability
+    url: https://github.com/FelipeFuhr/.github/security/advisories/new
+    about: Report security issues privately. Do not open a public issue.

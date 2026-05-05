@@ -1,0 +1,47 @@
+name: Bug report
+description: Something is broken
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before opening:** check the repo's `AGENTS.md` and existing issues.
+  - type: input
+    id: summary
+    attributes:
+      label: What happened?
+      placeholder: One-line description
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - Repo / tool / version:
+        - OS / platform:
+        - Relevant logs or output:
+    validations:
+      required: false

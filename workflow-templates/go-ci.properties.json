@@ -1,0 +1,6 @@
+{
+  "name": "Go CI",
+  "description": "fmt, lint, build, and test via ffreis-workflows-go. Renovate will pin the @main refs to SHA.",
+  "iconName": "octicon:check-circle",
+  "categories": ["Go", "CI"]
+}

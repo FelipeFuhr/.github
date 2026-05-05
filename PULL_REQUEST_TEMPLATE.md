@@ -1,8 +1,10 @@
+Closes #<!-- issue number, or delete this line if not linked to an issue -->
+
 ## Summary
 <!-- What changed and why? One paragraph max. -->
 
 ## Type of change
-<!-- Check all that apply — should match the commit prefix (`feat`, `fix`, `chore`, etc.) -->
+<!-- Check all that apply — should match the commit prefix (feat, fix, chore, etc.) -->
 - [ ] `feat` — new capability or behaviour
 - [ ] `fix` — bug fix
 - [ ] `chore` / `refactor` — no observable behaviour change

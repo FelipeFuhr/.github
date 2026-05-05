@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+# Uses ffreis-workflows-python reusable workflows.
+# Renovate will pin these @main refs to full commit SHAs.
+jobs:
+  fmt:
+    uses: FelipeFuhr/ffreis-workflows-python/.github/workflows/python-fmt.yml@main
+    with:
+      working-directory: .
+
+  lint:
+    uses: FelipeFuhr/ffreis-workflows-python/.github/workflows/python-lint.yml@main
+    with:
+      working-directory: .
+
+  test:
+    uses: FelipeFuhr/ffreis-workflows-python/.github/workflows/python-test.yml@main
+    with:
+      working-directory: .
