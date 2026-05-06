@@ -1,3 +1,5 @@
+Closes #<!-- issue number, or delete this line if not linked to an issue -->
+
 ## Summary
 <!-- What changed and why? One paragraph max. -->
 

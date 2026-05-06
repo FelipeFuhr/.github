@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+# Uses ffreis-workflows-rust reusable workflows.
+# Renovate will pin these @main refs to full commit SHAs.
+jobs:
+  fmt:
+    uses: FelipeFuhr/ffreis-workflows-rust/.github/workflows/rust-fmt.yml@main
+
+  lint:
+    uses: FelipeFuhr/ffreis-workflows-rust/.github/workflows/rust-lint.yml@main
+
+  test:
+    uses: FelipeFuhr/ffreis-workflows-rust/.github/workflows/rust-test.yml@main
+    with:
+      msrv: "1.80.0"  # update to match your Cargo.toml rust-version
