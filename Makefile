@@ -9,10 +9,10 @@ help: ## Show available targets
 lint: ## Lint all workflow YAML with actionlint
 	@command -v actionlint >/dev/null 2>&1 || { \
 		echo "ERROR: actionlint not found. Install from https://github.com/rhysd/actionlint"; exit 1; }
-	actionlint
+	actionlint .github/workflows/*.yml workflow-templates/*.yml
 
 fmt-check: ## Validate workflow YAML syntax
-	@command -v actionlint >/dev/null 2>&1 && actionlint || \
+	@command -v actionlint >/dev/null 2>&1 && actionlint .github/workflows/*.yml workflow-templates/*.yml || \
 	  python3 -c "import glob, yaml; [yaml.safe_load(open(f)) for f in glob.glob('.github/workflows/*.yml') + glob.glob('workflow-templates/*.yml')]; print('YAML valid')"
 
 secrets-scan-staged: ## Scan staged files for secrets
@@ -31,4 +31,5 @@ hooks: lefthook-bootstrap lefthook-install ## Bootstrap and install all git hook
 setup: hooks ## Install hooks and verify required tools
 	@command -v actionlint >/dev/null 2>&1 || { \
 		echo "ACTION REQUIRED: install actionlint from https://github.com/rhysd/actionlint"; exit 1; }
+	@python3 -m pip install --quiet pyyaml 2>/dev/null || true
 	@echo "Dev environment ready."
