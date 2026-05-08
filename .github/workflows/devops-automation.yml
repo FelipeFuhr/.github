@@ -18,6 +18,7 @@ concurrency:
 
 jobs:
   scorecard:
+    timeout-minutes: 15
     if: vars.SCORECARD_ENABLED == 'true' && github.event_name != 'pull_request'
     permissions:
       contents: read
@@ -29,6 +30,7 @@ jobs:
       upload-sarif: true
 
   stale:
+    timeout-minutes: 15
     if: vars.STALE_ENABLED == 'true' && github.event_name != 'pull_request'
     permissions:
       contents: read
