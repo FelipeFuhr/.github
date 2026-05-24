@@ -4,11 +4,6 @@ on:
   pull_request:
     branches: [main]
 
-permissions:
-  contents: read
-  actions: read
-  security-events: write
-
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -18,9 +13,13 @@ env:
 
 jobs:
   workflows-policy:
+    permissions:
+      contents: read
     uses: FelipeFuhr/ffreis-workflows-general/.github/workflows/general-workflows-policy.yml@01e2b12e992621fecf074b8a202f66044196f3bf # v1.0.4
 
   codeql-actions:
+    permissions:
+      contents: read
     uses: FelipeFuhr/ffreis-workflows-general/.github/workflows/general-codeql.yml@d9792d01b442d7f2d3d2c6855cb312d885594e0f # v1.2.1
     with:
       languages: actions
@@ -29,6 +28,8 @@ jobs:
 
   # Lint workflow files in this repo AND in workflow-templates/
   actionlint:
+    permissions:
+      contents: read
     uses: FelipeFuhr/ffreis-workflows-general/.github/workflows/general-actionlint.yml@01e2b12e992621fecf074b8a202f66044196f3bf # v1.0.4
     with:
       working-directory: "."
@@ -36,6 +37,8 @@ jobs:
   # Validate community health file markdown is well-formed
   markdown-check:
     name: Markdown files
+    permissions:
+      contents: read
     uses: FelipeFuhr/ffreis-workflows-general/.github/workflows/general-run-commands.yml@01e2b12e992621fecf074b8a202f66044196f3bf # v1.0.4
     with:
       commands: |
