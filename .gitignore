@@ -1,2 +1,5 @@
 .env
 .bin/
+
+scripts/hooks/
+scripts/bootstrap_lefthook.sh
