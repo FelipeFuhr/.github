@@ -3,7 +3,7 @@ SHELL         := /usr/bin/env bash
 
 .PHONY: help lint fmt-check secrets-scan-staged hook-scripts lefthook-bootstrap lefthook-install hooks setup install-act ci-local
 
-PLATFORM_STANDARDS_SHA := 1d2cb70b8228d4aee82bd863ae95dcd689c8781a  # main as of 2026-05-23
+PLATFORM_STANDARDS_SHA := cb283699ffeaa1bc63dd28fa8f2a28dea22174ef  # v1.2.0
 PLATFORM_STANDARDS_RAW := https://raw.githubusercontent.com/FelipeFuhr/ffreis-platform-standards
 
 HOOK_SCRIPTS := \
