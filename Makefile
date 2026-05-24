@@ -1,10 +1,17 @@
 .DEFAULT_GOAL := help
 SHELL         := /usr/bin/env bash
 
-.PHONY: help lint fmt-check secrets-scan-staged lefthook-bootstrap lefthook-install hooks setup install-act ci-local
+.PHONY: help lint fmt-check secrets-scan-staged hook-scripts lefthook-bootstrap lefthook-install hooks setup install-act ci-local
 
 PLATFORM_STANDARDS_SHA := 1d2cb70b8228d4aee82bd863ae95dcd689c8781a  # main as of 2026-05-23
 PLATFORM_STANDARDS_RAW := https://raw.githubusercontent.com/FelipeFuhr/ffreis-platform-standards
+
+HOOK_SCRIPTS := \
+	check_merge_markers.sh \
+	check_large_files.sh \
+	check_binary_files.sh \
+	check_commit_msg.sh \
+	check_required_tools.sh
 
 help: ## Show available targets
 	@awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z_-]+:.*##/ {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -23,7 +30,17 @@ secrets-scan-staged: ## Scan staged files for secrets
 		echo "ERROR: gitleaks not found."; exit 1; }
 	gitleaks protect --staged --redact
 
-lefthook-bootstrap: ## Download lefthook binary to .bin/
+hook-scripts: ## Download bootstrap + hook scripts from ffreis-platform-standards
+	@mkdir -p scripts/hooks
+	@curl -fsSL "$(PLATFORM_STANDARDS_RAW)/$(PLATFORM_STANDARDS_SHA)/lefthook/bootstrap_lefthook.sh" \
+		-o scripts/bootstrap_lefthook.sh && chmod +x scripts/bootstrap_lefthook.sh
+	@for script in $(HOOK_SCRIPTS); do \
+		curl -fsSL "$(PLATFORM_STANDARDS_RAW)/$(PLATFORM_STANDARDS_SHA)/lefthook/scripts/$$script" \
+			-o "scripts/hooks/$$script" && chmod +x "scripts/hooks/$$script"; \
+	done
+	@echo "Hook scripts downloaded."
+
+lefthook-bootstrap: hook-scripts ## Download lefthook binary to .bin/
 	bash ./scripts/bootstrap_lefthook.sh
 
 lefthook-install: ## Install git hooks via lefthook

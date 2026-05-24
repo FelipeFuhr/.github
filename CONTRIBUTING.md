@@ -13,6 +13,7 @@ broken PRs.
 make setup          # install lefthook + verify required tools
 make fmt-check      # check formatting
 make lint           # run linters
+make test           # run tests (where applicable)
 ```
 
 ## Commit format
