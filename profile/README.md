@@ -8,12 +8,12 @@ and Terraform, plus the infrastructure that ties them together.
 | Area | Key repos |
 |---|---|
 | **Platform tooling** | [`ffreis-platform-standards`](../ffreis-platform-standards) — shared Renovate presets, lefthook hooks, golangci config |
-| **Website fleet** | `ffreis-website` · `flemming-website` — static sites built by [`ffreis-website-compiler`](../ffreis-website-compiler) |
+| **Website fleet** | static sites built by [`ffreis-website-compiler`](../ffreis-website-compiler) and deployed via [`ffreis-website-deployer`](../ffreis-website-deployer) |
 | **CI/CD libraries** | `ffreis-workflows-go` · `ffreis-workflows-python` · `ffreis-workflows-rust` · `ffreis-workflows-terraform` · `ffreis-workflows-general` |
 | **ML** | `ffreis-python-model-serving` · `ffreis-rust-onnx-model-serving` · `ffreis-runner-comparison` |
 | **AI tooling** | [`ffreis-workflow-ai-standardizer`](../ffreis-workflow-ai-standardizer) — AI-assisted repo maintenance |
-| **Infrastructure** | `ffreis-platform-org` · `ffreis-platform-shared-infra` · `ffreis-flemming-infra` |
-| **Stock** | `ffreis-stock-simulator` · `ffreis-agents-runtime` |
+| **Infrastructure** | [`ffreis-platform-org`](../ffreis-platform-org) · dedicated per-project infra (private repos) |
+| **Stock** | [`ffreis-stock-simulator`](../ffreis-stock-simulator) |
 
 ## Standards
 
