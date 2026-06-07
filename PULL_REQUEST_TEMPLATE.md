@@ -9,13 +9,16 @@ Closes #<!-- issue number, or delete this line if not linked to an issue -->
 - [ ] `fix` — bug fix
 - [ ] `chore` / `refactor` — no observable behaviour change
 - [ ] `ci` / `docs` — tooling, workflows, or documentation only
-- [ ] **breaking change** — requires migration (describe below)
+- [ ] **breaking change** — requires migration notes (see Migration notes section)
 
 ## Test plan
 <!-- Delete lines that don't apply. -->
 - [ ] CI passes (fmt / lint / test / build)
-- [ ] Tested locally — describe:
-- [ ] No runtime test needed — reason:
+- [ ] Tested locally: <!-- what you ran and what you observed -->
+- [ ] No test needed: <!-- reason — e.g. docs-only, config change, infra plan reviewed -->
 
 ## Risks and follow-ups
-<!-- Caveats, rollback plan, TODO items. Delete section if none. -->
+<!-- Caveats, rollback plan, open TODOs. Delete section if none. -->
+
+## Migration notes
+<!-- Required if "breaking change" is checked above. Delete section otherwise. -->
